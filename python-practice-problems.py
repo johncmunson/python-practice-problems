@@ -445,3 +445,47 @@
 #     return reversed_sentence
 #
 # print(sentence_reverser(sentence))
+
+
+# ██████  ██   ██
+#      ██ ██   ██
+#  █████  ███████
+# ██           ██
+# ███████      ██  Draw A Game Board
+
+# Time for some fake graphics! Let’s say we want to draw game boards that look
+# like this:
+#  --- --- ---
+# |   |   |   |
+#  --- --- ---
+# |   |   |   |
+#  --- --- ---
+# |   |   |   |
+#  --- --- ---
+# This one is 3x3 (like in tic tac toe). Obviously, they come in many other
+# sizes (8x8 for chess, 19x19 for Go, and many more). Ask the user what size
+# game board they want to draw, and draw it for them to the screen using
+# Python’s print statement.
+
+rows = int(input('How many rows for your game board? '))
+columns = int(input('How many columns for your game board? '))
+
+def get_horizontal_line(columns):
+    line = ''
+    for i in range(1, columns + 1):
+        line += '--- '
+    line = ' ' + line
+    return line
+
+def get_vertical_line(columns):
+    line = ''
+    for num in range(1, columns + 1):
+        line += '|   '
+    line = line + '|'
+    return line
+
+for i in range(1, (rows * 2) + 2):
+    if i % 2 == 0:
+        print(get_vertical_line(columns))
+    else:
+        print(get_horizontal_line(columns))
